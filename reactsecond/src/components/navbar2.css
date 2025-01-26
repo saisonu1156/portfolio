@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection {
+    color: #3ECF8E;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+.portfolio-container {
+    background-color: black;
+}
+
+/* nav-bar */
+nav {
+    height: 5rem;
+    width: 100vw;
+    background-color: #131418;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    margin-top: 3rem;
+    position: fixed;
+    z-index: 10;
+    color: #f2f5f7;
+}
+/*Styling logo*/
+.logo {
+    padding: 1vh 1vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.logo i {
+    color: #63E6BE; /* Green color for the logo icon */
+    margin-right: 0.5rem;
+}
+.logo span {
+    color: #63E6BE; /* Green color for the logo text */
+}
+/*Styling Links*/
+.nav-links {
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+    margin-left: auto;
+    
+}
+
+.nav-links li a {
+    text-decoration: none;
+    margin: 0 0.7vw;
+    color: inherit;
+    position: relative; /* For absolute positioning of underline */
+    background-color: transparent; /* Remove default background color */
+    margin: 0 0.7vw;
+    color: inherit;
+}
+/* Underline effect on hover and active links */
+.nav-links li a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Position the underline below the text */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #63E6BE; /* Green underline color */
+    transition: width 0.3s ease-in-out; /* Smooth underline transition */
+}
+
+.nav-links li a:hover::before {
+    width: 100%; /* Full-width underline on hover */
+}
+
+.nav-links li a.active::before {
+    width: 100%; /* Full-width underline for active link */
+}
+
+/* Optional: Change the active link text color */
+.nav-links li a.active {
+    color: #63E6BE; /* Highlight active link text */
+}
+
+.nav-links li a:hover {
+    color: #63E6BE; /* Green color on hover */
+}
+
+
+
+.nav-links li a:hover {
+    color: #63E6BE; /* Green color on hover */
+    
+}
+.nav-links li {
+    position: relative;
+}
+
+/*Styling Buttons*/
+.hire-button {
+    background-color: transparent;
+    border: 1.5px solid #63E6BE; /* Green border for button */
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #f2f5f7;
+}
+.hire-button:hover {
+    color: #131418;
+    background-color: #63E6BE; /* Green background on hover */
+    border: 1.5px solid #63E6BE;
+    transition: all ease-in-out 350ms;
+}
+.resume-button {
+    color: #131418;
+    background-color: #63E6BE; /* Green background for button */
+    border: 1.5px solid #63E6BE; /* Green border for button */
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.resume-button:hover {
+    color: #f2f5f7;
+    background-color: transparent;
+    border: 1.5px solid #63E6BE; /* Green border on hover */
+    transition: all ease-in-out 350ms;
+}
+/*Styling Hamburger Icon*/
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger {
+    display: none;
+}
+/*Styling for small screens*/
+@media screen and (max-width: 800px) {
+    nav {
+        background-color: #000; /* Black background for small screens */
+    }
+    .logo i, .logo span {
+        color: #63E6BE; /* White color for logo on small screens */
+    }
+    .nav-links {
+        background: #000; /* Black background for the nav links container */
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open {
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li a {
+        color: #fff; /* White color for links on small screens */
+    }
+    .nav-links li a:hover {
+        color: #63E6BE; /* Green color on hover for links */
+    }
+    .hire-button {
+        border: 1.5px solid #fff; /* White border for button on small screens */
+        color: #fff; /* White text color for button on small screens */
+    }
+    .hire-button:hover {
+        color: #000; /* Black text color for button on hover */
+        background-color: #63E6BE;
+        border: 1.5px solid #fff;
+    }
+    .resume-button {
+        color: #fff; /* White text color for button on small screens */
+        background-color: #63E6BE;
+        border: 1.5px solid #63E6BE;
+    }
+    .resume-button:hover {
+        color: #fff;
+        background-color: transparent;
+        border: 1.5px solid #fff; /* White border on hover */
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .hamburger div {
+        background: #fff; /* White color for hamburger lines on small screens */
+    }
+    .nav-links li {
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1) {
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2) {
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3) {
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4) {
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5) {
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6) {
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7) {
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade {
+        opacity: 1;
+    }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+    transition: all 0.7s ease;
+    width: 0;
+}
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}

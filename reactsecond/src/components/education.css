@@ -1,0 +1,131 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #000;
+    background-color: #000;
+    /* font-family: Arial, sans-serif; */
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+
+}
+  
+  /* Timeline Container */
+  .timeline-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+  }
+  
+  /* Zig-Zag Line */
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #4caf50, #2196f3);
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+  
+  /* Timeline Item */
+  .timeline-item {
+    position: relative;
+    width: 45%;
+    margin: 20px 0;
+  }
+  
+  /* Left Items */
+  .timeline-item.left {
+    left: 0;
+    text-align: right;
+  }
+  
+  /* Right Items */
+  .timeline-item.right {
+    left: 55%;
+    text-align: left;
+  }
+  
+  /* Timeline Card */
+  .timeline-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .timeline-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* Duration Styling */
+  .timeline-duration {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    background: #4caf50;
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title */
+  .timeline-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Description */
+  .timeline-description {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  /* Connecting Dots */
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: #2196f3;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .timeline-item.left::before {
+    right: -20px;
+  }
+  
+  .timeline-item.right::before {
+    left: -20px;
+  }
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2%;
+    justify-content: center; /* Center items horizontally */
+    gap: 2%; /* Adjust gap for better spacing */
+    text-align: center; /* Center text within the skills section */
+}
+
+.skills-title, .experience-tittle, .project-tittle {
+    width: 100%; /* Full width of the container */
+    margin-bottom: 20px; /* Space between title and content */
+    font-size: 2em; /* Adjust font size as needed */
+    font-weight: bold; /* Make the title stand out */
+    color: #fff;
+    margin-top: 10%;
+}
+  

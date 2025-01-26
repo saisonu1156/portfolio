@@ -1,0 +1,147 @@
+.portfolio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 2200px;
+  gap: 30px;
+}
+
+.home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.home-content {
+  flex: 1;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+.image-container {
+  flex: 0 0 400px;
+  text-align: center;
+}
+
+.profile-image {
+  max-width: 90%;
+  height: auto;
+  border-radius: 2000px;
+  border: 4px solid #06e4d1;
+}
+
+/* Transition for smoother resizing */
+body, .home-content, .profile-image {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Media Query for Medium Screens (Tablets and Small Desktops) */
+@media (max-width: 1024px) {
+  .home {
+    flex-direction: row; /* Keep the row layout */
+    gap: 30px;
+  }
+
+  .home-content {
+    max-width: 50%; /* Slightly narrower content */
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .image-container {
+    flex: 0 0 300px;
+  }
+
+  .profile-image {
+    max-width: 80%;
+    border: 3px solid #06e4d1;
+  }
+  h1 {
+    font-size: 30px; /* Slightly smaller */
+  }
+  h2 {
+    font-size: 20px;
+  }
+
+  
+}
+
+/* Media Query for Small Screens (Phones) */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    gap: 20px;
+  }
+
+  .home-content {
+    max-width: 90%; /* Make content full-width */
+    text-align: center; /* Center-align text */
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
+
+  .image-container {
+    width: 70%;
+  }
+
+  .profile-image {
+    max-width: 100%;
+    border-radius: 50%;
+    border: 2px solid #06e4d1;
+  }
+  h1 {
+    font-size: 24px; /* Reduced for smaller devices */
+    text-align: center; /* Centered for aesthetics */
+  }
+  h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+/* Media Query for Very Small Screens (e.g., below 480px) */
+@media (max-width: 480px) {
+  .home-content {
+    font-size: 8px;
+    line-height: 1;
+  }
+
+  .image-container {
+    width: 60%;
+  }
+
+  .profile-image {
+    max-width: 90%;
+  }
+  h1 {
+    font-size: 20px; /* Compact size for tiny screens */
+    text-align: center;
+  }
+  h2 {
+    font-size: 15px;
+    text-align: center;
+  }
+}
+
+/* Additional Enhancements for Aesthetic Consistency */
+@media (max-width: 640px) {
+  .portfolio-container {
+    padding: 10px;
+  }
+
+  .home-content {
+    padding: 10px;
+  }
+
+  .profile-image {
+    border: 2px solid #06e4d1; /* Uniform border for smaller devices */
+  }
+}
